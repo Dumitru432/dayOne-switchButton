@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50px;
+    transition: ease 0.3s ease-in-out;
+} 
+
+header a {
+    text-decoration: none;
+}
+
+.text-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50px;
+    color: aqua;
+    transition: ease 0.3s ease-in-out;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    transition: all 0.3s ease-in-out;
+
+}
+
+body.dark {
+    background-color: black;
+}
+
+.toggle {
+    width: 330px;
+    height: 130px;
+    background-color: white;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    top: 50%;
+    left: 15px;
+    background-color: aqua;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle.active::before {
+    left: calc(100% - 100px - 15px);
+   background-color: black;
+}
+
+.toggle.active ~ footer {
+    opacity: 0;
+    visibility: hidden;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 50px;
+    color: black;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
